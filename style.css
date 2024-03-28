@@ -1,0 +1,232 @@
+/* DOCUMENTO CSS - Project CARD */
+
+* {
+  /* Reset */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+}
+/* "#" é usado para se referir ("linkar") ao "id" que está no HTML */
+
+#HTML {
+                      
+  color:rgb(255, 255, 255) ;
+  scroll-behavior: smooth;
+
+}
+
+.row{
+  padding: 5px;
+  margin: 10px 0px;
+  
+}
+.divisoria{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#menu ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  left: 0;
+}
+
+ul {
+  background-color: #000000;
+}
+
+ul li {
+  display: inline;
+  position: relative;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+}
+
+ul li a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 20px;
+  transition: .3;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  margin: 30px;
+}
+
+ul li a:hover {
+  color: #414141;
+}
+
+/*sub menu*/
+ul ul {
+  display: none;
+  position: absolute;
+  padding: 0;
+}
+
+ul li:hover ul {
+  display: block;
+}
+
+ul ul {
+  width: 150px;
+}
+
+ul ul li a {
+  display: block;
+}
+
+#top {
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Caixa flexível */
+  min-height: 92vh; /* Prreenche toda a tela com a "top" idependente do tamanho real da tela */
+  /* Adiciona outros estilos para layout flexbox */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centralizar conteúdo verticalmente */
+}
+.text-container {
+  text-align: center; /* Centraliza o texto dentro do seu "conteiner" (tela) */
+}
+
+#animated-text {
+  border-right: 2px solid rgba(255, 255, 255, 0.75); /* Barrinha de cursor */
+  text-align: center;
+  animation: cursor 500ms steps(2) infinite normal,
+    typing 4s steps(40) 1s normal both; /* tempo de animação da Barrinha do cursor */ /* A tag "steps" quebra a animação em 40 quadros, a animacao vai durar 4seg em velocidade normal; a tag both não deixa o "cursor do teclado" voltar*/
+  white-space: nowrap; /* Permite que não quebre o texto durante a animação */
+  overflow: hidden; /* Esconde o texto e mostra gradativamente durante a animação */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 13em;
+  }
+}
+
+@keyframes cursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  } /* define a animação, from(vai de) neste caso a cor */
+  to {
+    border-right-color: black;
+  } /* to(para) transparente */
+  /* Dessa forma a "Barrinha de cursor ira piscar da cor definida para transparente */
+}
+
+div.arrowDown {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  position: absolute;
+  margin-top: 90vh;
+  left: 50%;
+  transform: translateX(-50%);
+
+  animation-name: arrowDown;
+  animation-delay: 5s;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.arrowDown img{
+  width: 40px;
+  height: 40px;
+}
+
+@keyframes arrowDown{
+  0%{
+      top: 0px;
+  }
+  100%{
+      top: 20px;
+  }
+}
+
+#content {
+  background-color: #000000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+section:nth-last-of-type(1) {
+  background-color: #000000;
+}
+
+.card {
+  width: 200px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  background-color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px; /* Add some rounded corners */
+  margin: 10px; /* Add some margin for spacing */
+  cursor: pointer; /* Optional: Change cursor to pointer on hover */
+  transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.card {
+  width: 300px;
+  height: 500px;
+  border: 1px solid #67676700;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 7px 7px 7px 7px #faefef2f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card figure {
+  width: 290px;
+  height: 290px;
+  background-color: #ffffff00;
+  border-radius: 10px;
+  display: flex;
+  padding: 0px;
+}
+.card img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 05%;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  transition: all 0.7s cubic-bezier(0, 0, 0.5, 1);
+}
+.card:not(:hover) {
+  transform: scale(1);
+  transition: all 0.7s cubic-bezier(0, 0, 0.5, 1);
+}
+
+.card figure {
+  width: 100%;
+}
+
+
+#baseboard {
+  background-color: #131313;
+  height: 100px;
+  margin-top: 50px;
+}
